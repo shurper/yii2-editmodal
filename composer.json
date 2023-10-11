@@ -1,5 +1,5 @@
 {
-  "name": "floor12/yii2-editmodal",
+  "name": "shurper/yii2-editmodal",
   "description": "Yii2 to update models in bootstrap modals",
   "type": "yii2-extension",
   "minimum-stability": "stable",
@@ -12,8 +12,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "floor12",
-      "email": "primelifecoder@gmail.com",
+      "name": "shurper",
+      "email": "shurper@gmail.com",
       "role": "Developer"
     }
   ],
