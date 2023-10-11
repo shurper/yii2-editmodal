@@ -52,10 +52,10 @@ class EditModalHelper
      * @param string $content Content of button
      * @return string Html code
      */
-    public static function editBtn($path, $id, $class = "btn btn-default btn-sm", $content = IconHelper::PENCIL)
+    public static function editBtn($path, $id, $class = "btn btn-default btn-sm", $content = IconHelper::PENCIL, $clear_base_url = true)
     {
         $path = Url::toRoute([$path]);
-        $path = str_replace(Yii::$app->urlManager->baseUrl, '', $path);
+        $path = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $path) : $path;
         EditModalAsset::register(Yii::$app->getView());
         if (is_array($id)) {
             $id = json_encode($id);
@@ -74,10 +74,10 @@ class EditModalHelper
      * @param string $content Content of button
      * @return string Html code
      */
-    public static function copyBtn($path, $id, $class = "btn btn-default btn-sm", $content = IconHelper::COPY)
+    public static function copyBtn($path, $id, $class = "btn btn-default btn-sm", $content = IconHelper::COPY, $clear_base_url = true)
     {
         $path = Url::toRoute([$path]);
-        $path = str_replace(Yii::$app->urlManager->baseUrl, '', $path);
+        $path = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $path) : $path;
         EditModalAsset::register(Yii::$app->getView());
         $params = json_encode(['id' => $id, 'copy' => 1]);
         return " " . Html::button($content, [
@@ -95,10 +95,10 @@ class EditModalHelper
      * @param string $content Content of button
      * @return string Html code
      */
-    public static function deleteBtn($path, $id, $class = "btn btn-default btn-sm", $container = '#items', $content = IconHelper::TRASH)
+    public static function deleteBtn($path, $id, $class = "btn btn-default btn-sm", $container = '#items', $content = IconHelper::TRASH, $clear_base_url = true)
     {
-        $path = Url::toRoute($path);
-        $path = str_replace(Yii::$app->urlManager->baseUrl, '', $path);
+        $path = Url::toRoute([$path]);
+        $path = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $path) : $path;
         EditModalAsset::register(Yii::$app->getView());
         return " " . Html::button($content, [
                 'onclick' => "deleteItem('{$path}','{$id}','{$container}')",
@@ -112,10 +112,10 @@ class EditModalHelper
      * @param int|array $params Some params
      * @return string JS code
      */
-    public static function showForm($route, $params = 0, $modalParams = null, $silent = false)
+    public static function showForm($route, $params = 0, $modalParams = null, $silent = false, $clear_base_url = true)
     {
         $url = Url::toRoute($route);
-        $url = str_replace(Yii::$app->urlManager->baseUrl, '', $url);
+        $url = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $url) : $url;
         $data = json_encode($params);
         $modalParams = json_encode($modalParams ?? ['keyboard' => false, 'backdrop' => 'static']);
         $silent = $silent ? 'true' : 'false';
@@ -127,10 +127,10 @@ class EditModalHelper
      * @param $id integer Object ID
      * @return string JS code
      */
-    public static function deleteItem($route, $id)
+    public static function deleteItem($route, $id, $clear_base_url = true)
     {
         $url = Url::toRoute($route);
-        $url = str_replace(Yii::$app->urlManager->baseUrl, '', $url);
+        $url = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $url) : $url;
         return "deleteItem('{$url}',{$id})";
     }
 }
