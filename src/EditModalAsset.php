@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class EditModalAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/floor12/yii2-editmodal/assets/';
+    public $sourcePath = '@vendor/shurper/yii2-editmodal/assets/';
     public $css = [
         'editmodal.css'
     ];
