@@ -18,7 +18,6 @@ use yii\helpers\Url;
  */
 class EditModalHelper
 {
-
     public static function open(string $url, $params = [])
     {
 
