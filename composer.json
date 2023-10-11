@@ -24,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "shurper\\editmodal\\": "src"
+      "floor12\\editmodal\\": "src"
     }
   },
   "repositories": [
