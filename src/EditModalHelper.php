@@ -51,7 +51,7 @@ class EditModalHelper
      * @param string $content Content of button
      * @return string Html code
      */
-    public static function editBtn($path, $id, $class = "btn btn-default btn-sm", $content = IconHelper::PENCIL, $clear_base_url = true)
+    public static function editBtn($path, $id, $class = "btn btn-default btn-sm", $content = IconHelper::PENCIL, $clear_base_url = false)
     {
         $path = Url::toRoute([$path]);
         $path = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $path) : $path;
@@ -73,7 +73,7 @@ class EditModalHelper
      * @param string $content Content of button
      * @return string Html code
      */
-    public static function copyBtn($path, $id, $class = "btn btn-default btn-sm", $content = IconHelper::COPY, $clear_base_url = true)
+    public static function copyBtn($path, $id, $class = "btn btn-default btn-sm", $content = IconHelper::COPY, $clear_base_url = false)
     {
         $path = Url::toRoute([$path]);
         $path = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $path) : $path;
@@ -94,7 +94,7 @@ class EditModalHelper
      * @param string $content Content of button
      * @return string Html code
      */
-    public static function deleteBtn($path, $id, $class = "btn btn-default btn-sm", $container = '#items', $content = IconHelper::TRASH, $clear_base_url = true)
+    public static function deleteBtn($path, $id, $class = "btn btn-default btn-sm", $container = '#items', $content = IconHelper::TRASH, $clear_base_url = false)
     {
         $path = Url::toRoute([$path]);
         $path = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $path) : $path;
@@ -111,7 +111,7 @@ class EditModalHelper
      * @param int|array $params Some params
      * @return string JS code
      */
-    public static function showForm($route, $params = 0, $modalParams = null, $silent = false, $clear_base_url = true)
+    public static function showForm($route, $params = 0, $modalParams = null, $silent = false, $clear_base_url = false)
     {
         $url = Url::toRoute($route);
         $url = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $url) : $url;
@@ -126,7 +126,7 @@ class EditModalHelper
      * @param $id integer Object ID
      * @return string JS code
      */
-    public static function deleteItem($route, $id, $clear_base_url = true)
+    public static function deleteItem($route, $id, $clear_base_url = false)
     {
         $url = Url::toRoute($route);
         $url = $clear_base_url ? str_replace(Yii::$app->urlManager->baseUrl, '', $url) : $url;
