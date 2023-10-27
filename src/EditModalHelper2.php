@@ -58,7 +58,7 @@ class EditModalHelper2
         EditModalAsset::register(Yii::$app->getView());
         return " " . Html::button(IconHelper::PENCIL, [
                 'onclick' => "showForm('{$path}',{$id})",
-                'title' => 'редактировать',
+                'title' => 'Edit',
                 'class' => $class
             ]);
     }
@@ -76,7 +76,7 @@ class EditModalHelper2
         EditModalAsset::register(Yii::$app->getView());
         return " " . Html::button(IconHelper::TRASH, [
                 'onclick' => "deleteItem('{$path}',{$id},'{$container}')",
-                'title' => 'удалить',
+                'title' => 'Delete',
                 'class' => $class
             ]);
     }

@@ -61,7 +61,7 @@ class EditModalHelper
         }
         return " " . Html::button($content, [
                 'onclick' => "showForm('{$path}',{$id})",
-                'title' => 'редактировать',
+                'title' => 'Edit',
                 'class' => $class
             ]);
     }
@@ -101,7 +101,7 @@ class EditModalHelper
         EditModalAsset::register(Yii::$app->getView());
         return " " . Html::button($content, [
                 'onclick' => "deleteItem('{$path}','{$id}','{$container}')",
-                'title' => 'удалить',
+                'title' => 'Delete',
                 'class' => $class
             ]);
     }
